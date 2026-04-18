@@ -1,0 +1,92 @@
+{
+    "PROV-00001": {
+        "organization_name": "Department of Science and Technology (DOST)",
+        "email": "scholarships@dost.gov.ph",
+        "contact_number": "09171234567",
+        "office_address": "Bicutan, Taguig City",
+        "website": "",
+        "scholarship_provider_id": "PROV-00001",
+        "password": "dost123",
+        "scholarships": {
+            "SCH-00001": {
+                "scholarship_name": "DOST-SEI Undergraduate Scholarship Program",
+                "description": "Financial assistance for Filipino students pursuing degrees in science and technology fields.",
+                "min_gwa": 1.75,
+                "max_income": 200000,
+                "location": "Philippines",
+                "grant_amount": 40000,
+                "slots": 1000,
+                "deadline": "2026-05-30"
+            }
+        }
+    },
+    "PROV-00002": {
+        "organization_name": "Commission on Higher Education (CHED)",
+        "email": "chedscholarships@ched.gov.ph",
+        "contact_number": "09981234567",
+        "office_address": "C.P. Garcia Ave, Diliman, Quezon City",
+        "website": "www.ched.gov.ph",
+        "scholarship_provider_id": "PROV-00002",
+        "password": "ched123",
+        "scholarships": {
+            "SCH-00001": {
+                "scholarship_name": "CHED Student Financial Assistance Programs (StuFAPs)",
+                "description": "Financial assistance for deserving Filipino students, especially those from low-income families.",
+                "min_gwa": 2.5,
+                "max_income": 400000,
+                "location": "Philippines",
+                "grant_amount": 20000,
+                "slots": 5000,
+                "deadline": "2026-06-15",
+                "applications": [
+                    "26-00001"
+                ]
+            }
+        }
+    },
+    "PROV-00003": {
+        "organization_name": "Provincial Government of Batangas (Office of Gov. Vilma Santos)",
+        "email": "scholarships@batangas.gov.ph",
+        "contact_number": "09184567890",
+        "office_address": "Provincial Capitol, Batangas City",
+        "website": "www.batangas.gov.ph",
+        "scholarship_provider_id": "PROV-00003",
+        "password": "batangas123",
+        "scholarships": {
+            "SCH-00001": {
+                "scholarship_name": "Batangas Provincial Scholarship Program",
+                "description": "Financial assistance for Batangueno students to support their college education.",
+                "min_gwa": 2.25,
+                "max_income": 300000,
+                "location": "Batangas",
+                "grant_amount": 15000,
+                "slots": 300,
+                "deadline": "2026-07-15",
+                "applications": [
+                    "26-00001"
+                ]
+            }
+        }
+    },
+    "PROV-00004": {
+        "organization_name": "City Government of Lipa (Office of Mayor Eric B. Africa)",
+        "email": "scholarships@lipa.gov.ph",
+        "contact_number": "09192345678",
+        "office_address": "Lipa City Hall, Batangas",
+        "website": "www.lipa.gov.ph",
+        "scholarship_provider_id": "PROV-00004",
+        "password": "lipa123",
+        "scholarships": {
+            "SCH-00001": {
+                "scholarship_name": "Lipa City Educational Assistance Program",
+                "description": "Financial aid for qualified residents of Lipa City to support their college education.",
+                "min_gwa": 2.5,
+                "max_income": 250000,
+                "location": "Lipa City",
+                "grant_amount": 10000,
+                "slots": 200,
+                "deadline": "2026-07-30"
+            }
+        }
+    }
+}

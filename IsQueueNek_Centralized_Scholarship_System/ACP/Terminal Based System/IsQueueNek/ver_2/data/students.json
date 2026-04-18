@@ -1,0 +1,15 @@
+{
+    "26-00001": {
+        "name": "Dylan Luke P. Oatis",
+        "age": 18,
+        "gwa": 1.24,
+        "annual_family_income": 100000,
+        "address": "Lipa City, Batangas",
+        "student_id": "26-00001",
+        "password": "6589983deca957f17b426f27e4d9d99932fcee4968578d415b786f225188121d",
+        "applications": [
+            "PROV-00004_SCH-00001",
+            "PROV-00003_SCH-00001"
+        ]
+    }
+}

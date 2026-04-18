@@ -1,0 +1,116 @@
+{
+    "PROV-00001": {
+        "organization_name": "Department of Science and Technology (DOST)",
+        "email": "scholarships@dost.gov.ph",
+        "contact_number": "09171234567",
+        "office_address": "Bicutan, Taguig City",
+        "scholarship_provider_id": "PROV-00001",
+        "password": "e934267e4e7b19e33d8587fd9da79dcb7155cf8cb3c7fb600e0418ca4d12db19",
+        "status": "approved",
+        "scholarships": {
+            "SCH-00001": {
+                "scholarship_name": "DOST-SEI Undergraduate Scholarship Program",
+                "description": "Financial assistance for Filipino students pursuing degrees in science and technology fields.",
+                "min_gwa": 1.75,
+                "max_income": 200000,
+                "location": "National",
+                "grant_amount": 40000,
+                "slots": 999,
+                "deadline": "2026-05-30",
+                "applicants": {
+                    "26-00001": "pending",
+                    "26-00002": "pending"
+                }
+            }
+        }
+    },
+    "PROV-00002": {
+        "organization_name": "Commission on Higher Education (CHED)",
+        "email": "chedscholarships@ched.gov.ph",
+        "contact_number": "09981234567",
+        "office_address": "C.P. Garcia Ave, Diliman, Quezon City",
+        "scholarship_provider_id": "PROV-00002",
+        "password": "0a413e7c27a87f55f4177a606792b766df26c212d1003f75c96d7229fa562bcf",
+        "status": "rejected",
+        "scholarships": {
+            "SCH-00001": {
+                "scholarship_name": "CHED Student Financial Assistance Programs (StuFAPs)",
+                "description": "Financial assistance for deserving Filipino students, especially those from low-income families.",
+                "min_gwa": 2.5,
+                "max_income": 400000,
+                "location": "National",
+                "grant_amount": 20000,
+                "slots": 4999,
+                "deadline": "2026-06-15",
+                "applicants": {
+                    "26-00001": "pending",
+                    "26-00002": "pending"
+                }
+            }
+        }
+    },
+    "PROV-00003": {
+        "organization_name": "Provincial Government of Batangas (Office of Gov. Vilma Santos)",
+        "email": "scholarships@batangas.gov.ph",
+        "contact_number": "09184567890",
+        "office_address": "Provincial Capitol, Batangas City",
+        "scholarship_provider_id": "PROV-00003",
+        "password": "20ddf1056370f84a38e9988b838b8f007ec294672c35db5c88d69e8099531aa3",
+        "status": "approved",
+        "scholarships": {
+            "SCH-00001": {
+                "scholarship_name": "Batangas Provincial Scholarship Program",
+                "description": "Financial assistance for Batangueno students to support their college education.",
+                "min_gwa": 2.25,
+                "max_income": 300000,
+                "location": "Batangas",
+                "grant_amount": 15000,
+                "slots": 291,
+                "deadline": "2026-07-15",
+                "applicants": {
+                    "26-00001": "pending",
+                    "26-00002": "pending"
+                }
+            }
+        }
+    },
+    "PROV-00004": {
+        "organization_name": "City Government of Lipa (Office of Mayor Eric B. Africa)",
+        "email": "scholarships@lipa.gov.ph",
+        "contact_number": "09192345678",
+        "office_address": "Lipa City Hall, Batangas",
+        "scholarship_provider_id": "PROV-00004",
+        "password": "2bfc6617f50586fea42f7e1ea224d05aa6dd46b75dce7d3e4da92e6b18f758e6",
+        "status": "approved",
+        "scholarships": {
+            "SCH-00001": {
+                "scholarship_name": "Lipa City Educational Assistance Program",
+                "description": "Financial aid for qualified residents of Lipa City to support their college education.",
+                "min_gwa": 2.5,
+                "max_income": 250000,
+                "location": "Lipa City",
+                "grant_amount": 10000,
+                "slots": 190,
+                "deadline": "2026-07-30",
+                "applicants": {
+                    "26-00001": "approved",
+                    "26-00002": "approved"
+                }
+            },
+            "SCH-00002": {
+                "scholarship_name": "College Educational Assistance",
+                "description": "help students",
+                "location": "Lipa",
+                "min_gwa": 2.0,
+                "max_income": 500000,
+                "grant_amount": 5000,
+                "slots": 192,
+                "deadline": "2026-12-12",
+                "applicants": {
+                    "26-00001": "rejected",
+                    "26-00002": "rejected"
+                }
+            }
+        }
+    }
+}

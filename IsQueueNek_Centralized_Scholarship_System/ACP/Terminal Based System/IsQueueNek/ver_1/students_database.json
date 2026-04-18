@@ -1,0 +1,15 @@
+{
+    "26-00001": {
+        "name": "Dylan Luke P. Oatis",
+        "age": 18,
+        "gwa": 1.25,
+        "annual_income": 100000,
+        "address": "Amiya Rosa 1, Brgy. Bolbok, Lipa City, Batangas",
+        "student_id": "26-00001",
+        "password": "dylan123",
+        "applications": [
+            "PROV-00002_SCH-00001",
+            "PROV-00003_SCH-00001"
+        ]
+    }
+}
