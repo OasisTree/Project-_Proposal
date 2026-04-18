@@ -69,7 +69,7 @@
         "office_address": "Lipa City Hall, Batangas",
         "scholarship_provider_id": "PROV-00004",
         "password": "2bfc6617f50586fea42f7e1ea224d05aa6dd46b75dce7d3e4da92e6b18f758e6",
-        "status": "approved",
+        "status": "pending",
         "scholarships": {
             "SCH-00001": {
                 "scholarship_name": "Lipa City Educational Assistance Program",
