@@ -6,7 +6,7 @@
         "office_address": "Bicutan, Taguig City",
         "scholarship_provider_id": "PROV-00001",
         "password": "e934267e4e7b19e33d8587fd9da79dcb7155cf8cb3c7fb600e0418ca4d12db19",
-        "status": "approved",
+        "status": "rejected",
         "scholarships": {
             "SCH-00001": {
                 "scholarship_name": "DOST-SEI Undergraduate Scholarship Program",
@@ -15,12 +15,8 @@
                 "max_income": 200000,
                 "location": "National",
                 "grant_amount": 40000,
-                "slots": 999,
-                "deadline": "2026-05-30",
-                "applicants": {
-                    "26-00001": "pending",
-                    "26-00002": "pending"
-                }
+                "slots": 998,
+                "deadline": "2026-05-30"
             }
         }
     },
@@ -31,7 +27,7 @@
         "office_address": "C.P. Garcia Ave, Diliman, Quezon City",
         "scholarship_provider_id": "PROV-00002",
         "password": "0a413e7c27a87f55f4177a606792b766df26c212d1003f75c96d7229fa562bcf",
-        "status": "rejected",
+        "status": "approved",
         "scholarships": {
             "SCH-00001": {
                 "scholarship_name": "CHED Student Financial Assistance Programs (StuFAPs)",
@@ -40,11 +36,10 @@
                 "max_income": 400000,
                 "location": "National",
                 "grant_amount": 20000,
-                "slots": 4999,
+                "slots": 4998,
                 "deadline": "2026-06-15",
                 "applicants": {
-                    "26-00001": "pending",
-                    "26-00002": "pending"
+                    "26-00001": "pending"
                 }
             }
         }
@@ -65,11 +60,10 @@
                 "max_income": 300000,
                 "location": "Batangas",
                 "grant_amount": 15000,
-                "slots": 291,
+                "slots": 290,
                 "deadline": "2026-07-15",
                 "applicants": {
-                    "26-00001": "pending",
-                    "26-00002": "pending"
+                    "26-00001": "pending"
                 }
             }
         }
@@ -90,10 +84,10 @@
                 "max_income": 250000,
                 "location": "Lipa City",
                 "grant_amount": 10000,
-                "slots": 190,
+                "slots": 188,
                 "deadline": "2026-07-30",
                 "applicants": {
-                    "26-00001": "approved",
+                    "26-00001": "pending",
                     "26-00002": "approved"
                 }
             },
@@ -104,11 +98,10 @@
                 "min_gwa": 2.0,
                 "max_income": 500000,
                 "grant_amount": 5000,
-                "slots": 192,
+                "slots": 191,
                 "deadline": "2026-12-12",
                 "applicants": {
-                    "26-00001": "rejected",
-                    "26-00002": "rejected"
+                    "26-00001": "pending"
                 }
             }
         }

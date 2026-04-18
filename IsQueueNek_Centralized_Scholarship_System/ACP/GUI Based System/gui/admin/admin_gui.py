@@ -25,7 +25,7 @@ class AdminLogin(tk.Frame):
 
     def create_card(self, parent, title, desc, subhead1, subhead2, cmd1, cmd2):
         """Build login UI card."""
-
+        # Main card container
         card = tk.Frame(
             parent,
             bg="white",
@@ -38,37 +38,51 @@ class AdminLogin(tk.Frame):
         card.pack_propagate(False)
         card.pack(expand=True)
 
+        # Title
         tk.Label(card, text=title, bg="white", font=("Segoe UI", 18, "bold")).pack()
 
+        # Description
         tk.Label(card, text=desc, bg="white", fg="#64748b", font=("Segoe UI", 10)).pack(
             pady=(0, 5)
         )
 
+        # Horizontal divider line
         tk.Frame(card, height=1, bg="#e5e7eb").pack(fill="x", pady=(0, 15))
 
+        # Username label
         tk.Label(card, text=subhead1, bg="white", font=("Segoe UI", 9, "bold")).pack(
             anchor="w"
         )
 
+        # Username input field
         self.username = tk.Entry(
-            card, font=("Segoe UI", 9), bg="white", highlightthickness=1, relief="flat"
+            card,
+            font=("Segoe UI", 9),
+            bg="white",
+            highlightbackground="lightgray",
+            highlightthickness=1,
+            relief="flat",
         )
-        self.username.pack(fill="x", ipady=5, pady=(0, 15))
+        self.username.pack(fill="x", ipady=5, ipadx=70, pady=(0, 15))
 
+        # Password label
         tk.Label(card, text=subhead2, bg="white", font=("Segoe UI", 9, "bold")).pack(
             anchor="w"
         )
 
+        # Password input field
         self.password = tk.Entry(
             card,
             font=("Segoe UI", 9),
             bg="white",
+            highlightbackground="lightgrey",
             highlightthickness=1,
             relief="flat",
             show="•",
         )
-        self.password.pack(fill="x", ipady=5, pady=(0, 15))
+        self.password.pack(fill="x", ipady=5, ipadx=70, pady=(0, 15))
 
+        # Sign In button
         tk.Button(
             card,
             text="Sign In",
@@ -77,9 +91,10 @@ class AdminLogin(tk.Frame):
             fg="white",
             relief="flat",
             command=cmd1,
-        ).pack(fill="x", ipady=5)
+        ).pack(fill="x", ipady=5, ipadx=70)
 
-        back = tk.Label(
+        # Back to Main Menu link
+        back_main_menu = tk.Label(
             card,
             text="Back to Main Menu",
             font=("Segoe UI", 10),
@@ -87,15 +102,13 @@ class AdminLogin(tk.Frame):
             fg="darkgrey",
             cursor="hand2",
         )
-        back.pack(pady=(15, 0))
-        back.bind("<Button-1>", lambda e: cmd2())
+        back_main_menu.pack(pady=(15, 0))
+        back_main_menu.bind("<Button-1>", lambda e: cmd2())
 
     def sign_in(self):
         """Authenticate admin credentials."""
-
         username = self.username.get()
         password = self.password.get()
-
         admin_db = load_db(ADMIN_DB_PATH)
         hashed_username = hash_input(username)
 
@@ -120,88 +133,120 @@ class AdminDashboard(tk.Frame):
         self.parent = parent
         self.pack(fill="both", expand=True)
 
-        header = tk.Frame(
-            self, bg="white", highlightthickness=1, highlightbackground="darkgrey"
+        header_frame = tk.Frame(
+            self,
+            bg="white",
+            highlightthickness=1,
+            highlightbackground="darkgrey",
+            relief="flat",
         )
-        header.pack(fill="x")
+        header_frame.pack(fill="x")
 
         tk.Label(
-            header,
+            header_frame,
             text="Review Pending Providers",
             font=("Segoe UI", 16, "bold"),
             bg="white",
         ).pack(side="left", padx=20, pady=20)
 
-        tk.Label(
-            header,
+        return_to_dashboard = tk.Label(
+            header_frame,
             text="Logout",
             font=("Segoe UI Semibold", 10, "underline"),
             bg="white",
             cursor="hand2",
-        ).pack(side="right", padx=20)
-        header.bind("<Button-1>", lambda e: self.logout())
+        )
+        return_to_dashboard.pack(side="right", padx=20, pady=20)
+        return_to_dashboard.bind("<Button-1>", lambda e: self.logout())
 
-        self.providers_db = load_db(PROVIDER_DB_PATH)
+        providers_db = load_db(PROVIDER_DB_PATH)
+
         self.pending_count = 0
 
-        for pid, data in self.providers_db.items():
-            if data["status"] == "pending":
+        for provider_id, provider_data in providers_db.items():
+            if provider_data["status"] == "pending":
                 self.pending_count += 1
-                self.create_card(pid, data)
+                self.create_card(provider_id, provider_data)
 
         self.check_pending()
 
     def create_card(self, provider_id, provider_data):
         """Create provider review card."""
+        org_name = provider_data["organization_name"]
+        id = provider_id
+        email = provider_data["email"]
+        number = provider_data["contact_number"]
+        address = provider_data["office_address"]
 
         card = tk.Frame(
-            self, bg="white", highlightthickness=1, highlightbackground="lightgrey"
+            self,
+            bg="white",
+            highlightthickness=1,
+            highlightbackground="lightgrey",
+            relief="flat",
         )
-        card.pack(fill="x", padx=20, pady=10)
+        card.pack(fill="x", padx=20, pady=10, ipadx=5)
 
-        info = (
-            f"ID: {provider_id} | Email: {provider_data['email']}\n"
-            f"Contact: {provider_data['contact_number']} | "
-            f"Location: {provider_data['office_address']}"
-        )
+        text_container = tk.Frame(card, bg="white")
+        text_container.grid(row=0, column=0, sticky="w", padx=(5, 0))
 
         tk.Label(
-            card,
-            text=provider_data["organization_name"],
+            text_container,
+            text=org_name,
             font=("Segoe UI", 14, "bold"),
             bg="white",
+            justify="left",
         ).pack(anchor="w")
 
-        tk.Label(card, text=info, font=("Segoe UI", 9), fg="darkgrey", bg="white").pack(
-            anchor="w"
-        )
+        sub_text = f"ID: {id} | Email: {email}\nContact: {number} | Location: {address}"
 
-        btn_frame = tk.Frame(card, bg="white")
-        btn_frame.pack(anchor="e", padx=5)
+        tk.Label(
+            text_container,
+            text=sub_text,
+            font=("Segoe UI", 9),
+            bg="white",
+            fg="darkgrey",
+            justify="left",
+        ).pack(anchor="w")
 
-        tk.Button(
-            btn_frame,
+        buttons_container = tk.Frame(card, bg="white")
+        buttons_container.config(width=100, height=50)
+        card.pack_propagate(False)
+        buttons_container.pack(anchor="e", padx=5, expand=True)
+
+        reject_bttn = tk.Button(
+            buttons_container,
             text="Reject",
+            font=("Segoe UI", 10, "bold"),
+            width=10,
             bg="darkred",
             fg="white",
-            command=lambda: self.update_status(provider_id, card, "rejected"),
-        ).pack(side="right", padx=5)
+            relief="flat",
+            command=lambda p_id=provider_id, c=card: self.update_status(
+                p_id, c, "rejected"
+            ),
+        )
+        reject_bttn.pack(side="right", padx=10)
 
-        tk.Button(
-            btn_frame,
+        approve_bttn = tk.Button(
+            buttons_container,
             text="Approve",
+            font=("Segoe UI", 10, "bold"),
+            width=10,
             bg="darkgreen",
             fg="white",
-            command=lambda: self.update_status(provider_id, card, "approved"),
-        ).pack(side="right", padx=5)
+            relief="flat",
+            command=lambda p_id=provider_id, c=card: self.update_status(
+                p_id, c, "approved"
+            ),
+        )
+        approve_bttn.pack(side="right", padx=10)
 
     def update_status(self, provider_id, card, status):
         """Update provider status."""
-
-        self.providers_db = load_db(PROVIDER_DB_PATH)
-        self.providers_db[provider_id]["status"] = status
-        save_db(self.providers_db, PROVIDER_DB_PATH)
-
+        providers_db = load_db(PROVIDER_DB_PATH)
+        providers_db[provider_id]["status"] = status
+        save_db(providers_db, PROVIDER_DB_PATH)
         card.destroy()
         self.pending_count -= 1
         self.check_pending()
@@ -210,8 +255,12 @@ class AdminDashboard(tk.Frame):
         """Show message if no pending providers."""
         if self.pending_count == 0:
             tk.Label(
-                self, text="No providers left to evaluate.", bg="#f8fafc", fg="darkgrey"
-            ).pack(expand=True)
+                self,
+                text="No providers left to evaluate.",
+                font=("Segoe UI", 10),
+                bg="#f8fafc",
+                fg="darkgrey",
+            ).pack(fill="both", expand=True)
 
     def logout(self):
         """Return to login screen."""

@@ -564,6 +564,7 @@ class ViewAndApplyScholarship(tk.Frame):
                     ] = {}
 
                 # Eligibility logic parameters
+                is_prov_approved = provider_data["status"] == "approved"
                 not_yet_applied = (
                     f"{provider_id}_{schl_id}"
                     not in students_db[student_id]["applications"]
@@ -586,7 +587,8 @@ class ViewAndApplyScholarship(tk.Frame):
 
                 # Filter condition
                 if (
-                    not_deadline
+                    is_prov_approved
+                    and not_deadline
                     and slots_check
                     and qualifies
                     and location_match

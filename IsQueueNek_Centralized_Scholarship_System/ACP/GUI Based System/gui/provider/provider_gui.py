@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import messagebox
 from config import PROVIDER_DB_PATH, STUDENT_DB_PATH
@@ -884,6 +885,10 @@ class EvaluateNewApplicants(tk.Frame):
                     student_address = student_data["address"]
                     scholarship_name = scholarships[schl_id]["scholarship_name"]
 
+                    # Fetch the file paths
+                    grades_filepath = student_data.get("ctc_of_grades", "")
+                    income_filepath = student_data.get("proof_of_income", "")
+
                     # Build individual applicant card
                     card = tk.Frame(
                         parent,
@@ -929,6 +934,33 @@ class EvaluateNewApplicants(tk.Frame):
                     card.pack_propagate(False)
                     buttons_container.pack(anchor="e", padx=5, expand=True)
 
+                    # Document Viewing Button
+                    if grades_filepath:
+                        tk.Button(
+                            buttons_container,
+                            text="View Grades",
+                            font=("Segoe UI", 9),
+                            bg="#e2e8f0",
+                            fg="black",
+                            relief="flat",
+                            command=lambda path=grades_filepath: self.open_document(
+                                path
+                            ),
+                        ).pack(side="left", padx=5)
+
+                    if income_filepath:
+                        tk.Button(
+                            buttons_container,
+                            text="View Income",
+                            font=("Segoe UI", 9),
+                            bg="#e2e8f0",
+                            fg="black",
+                            relief="flat",
+                            command=lambda path=income_filepath: self.open_document(
+                                path
+                            ),
+                        ).pack(side="left", padx=5)
+
                     reject_bttn = tk.Button(
                         buttons_container,
                         text="Reject",
@@ -956,6 +988,19 @@ class EvaluateNewApplicants(tk.Frame):
                         ),
                     )
                     approve_bttn.pack(side="right", padx=10)
+
+    def open_document(self, filepath):
+        """Attempts to open the provided file path using the default OS application."""
+        if filepath and os.path.exists(filepath):
+            try:
+                # os.startfile is perfect for Windows environments
+                os.startfile(filepath)
+            except Exception as e:
+                messagebox.showerror("File Error", f"Could not open file.\nError: {e}")
+        else:
+            messagebox.showwarning(
+                "Missing File", "The requested file path does not exist or was moved."
+            )
 
     def update_status(self, student_id, schl_id, provider_id, card, status):
         """Updates the application status in both the provider and student databases, then removes the UI card."""
