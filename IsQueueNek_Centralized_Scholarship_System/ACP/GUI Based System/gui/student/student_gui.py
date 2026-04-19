@@ -7,6 +7,7 @@ from config import PROVIDER_DB_PATH, STUDENT_DB_PATH
 from database import load_db, save_db
 from utils.id_generator import generate_student_id
 from utils.security import hash_input, verify_input
+from utils.validator import check_text, check_input
 
 
 class StudentLogin(tk.Frame):
@@ -384,6 +385,17 @@ class RegisterNewProfile(tk.Frame):
         """Compiles input data, securely hashes the password, and saves the new student profile."""
         students_db = load_db(STUDENT_DB_PATH)
         student_id = generate_student_id(students_db)
+
+        name = check_text(self.full_name.get())
+        age = check_input(self.age.get())
+        gwa = check_input(self.gwa.get())
+        annual_family_income = check_input(self.annual_income.get())
+        address = check_text(self.address.get())
+        password = check_text(self.password.get())
+
+        if None in (name, age, gwa, annual_family_income, address, password):
+            messagebox.showerror("Invalid Input", "Please ensure that the data you input is not empty and valid")
+            return
 
         students_db[student_id] = {
             "name": self.full_name.get(),

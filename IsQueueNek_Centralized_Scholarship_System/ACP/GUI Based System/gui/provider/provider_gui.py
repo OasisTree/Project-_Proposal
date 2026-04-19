@@ -5,6 +5,7 @@ from config import PROVIDER_DB_PATH, STUDENT_DB_PATH
 from database import load_db, save_db
 from utils.id_generator import generate_provider_id, generate_scholarship_id
 from utils.security import hash_input, verify_input
+from utils.validator import check_text, check_input
 
 
 class ProviderLogin(tk.Frame):
@@ -313,6 +314,16 @@ class RegisterNewProfile(tk.Frame):
         providers_db = load_db(PROVIDER_DB_PATH)
         prov_id = generate_provider_id(providers_db)
 
+        organization_name = check_text(self.org_name.get())
+        email = check_text(self.email.get())
+        contact_number = check_input(self.contact_number.get())
+        office_address = check_text(self.office_address.get())
+        password = check_text(self.password.get())
+
+        if None in (organization_name, email, contact_number, office_address, password):
+            messagebox.showerror("Invalid Input", "Please ensure that the data you input is not empty and valid")
+            return
+        
         providers_db[prov_id] = {
             "organization_name": self.org_name.get(),
             "email": self.email.get(),
@@ -603,6 +614,19 @@ class CreateNewScholarship(tk.Frame):
         """Compiles scholarship data and saves it under the provider's database record."""
         providers_db = load_db(PROVIDER_DB_PATH)
         provider_data = providers_db[self.provider_id]
+
+        scholarship_name = check_text(self.scholarship_name.get())
+        description = check_text(self.short_description.get())
+        location = check_text(self.location.get())
+        min_gwa = check_input(self.min_gwa.get())
+        max_income = check_input(self.max_income.get())
+        grant_amount = check_input(self.grant_amount.get())
+        slots =  check_input(self.slots.get())
+        deadline = check_text(self.deadline.get())
+
+        if None in (scholarship_name, description, location, min_gwa, max_income, grant_amount, slots, deadline):
+            messagebox.showerror("Invalid Input", "Please ensure that the data you input is not empty and valid")
+            return
 
         scholarship_info = {
             "scholarship_name": self.scholarship_name.get(),
