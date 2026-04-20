@@ -5,8 +5,8 @@
         "contact_number": "09171234567",
         "office_address": "Bicutan, Taguig City",
         "scholarship_provider_id": "PROV-00001",
-        "password": "e934267e4e7b19e33d8587fd9da79dcb7155cf8cb3c7fb600e0418ca4d12db19",
-        "status": "pending",
+        "password": "ecd71870d1963316a97e3ac3408c9835ad8cf0f3c1bc703527c30265534f75ae",
+        "status": "approved",
         "scholarships": {
             "SCH-00001": {
                 "scholarship_name": "DOST-SEI Undergraduate Scholarship Program",
@@ -26,8 +26,8 @@
         "contact_number": "09981234567",
         "office_address": "C.P. Garcia Ave, Diliman, Quezon City",
         "scholarship_provider_id": "PROV-00002",
-        "password": "0a413e7c27a87f55f4177a606792b766df26c212d1003f75c96d7229fa562bcf",
-        "status": "pending",
+        "password": "ecd71870d1963316a97e3ac3408c9835ad8cf0f3c1bc703527c30265534f75ae",
+        "status": "approved",
         "scholarships": {
             "SCH-00001": {
                 "scholarship_name": "CHED Student Financial Assistance Programs (StuFAPs)",
@@ -47,8 +47,8 @@
         "contact_number": "09184567890",
         "office_address": "Provincial Capitol, Batangas City",
         "scholarship_provider_id": "PROV-00003",
-        "password": "20ddf1056370f84a38e9988b838b8f007ec294672c35db5c88d69e8099531aa3",
-        "status": "pending",
+        "password": "ecd71870d1963316a97e3ac3408c9835ad8cf0f3c1bc703527c30265534f75ae",
+        "status": "approved",
         "scholarships": {
             "SCH-00001": {
                 "scholarship_name": "Batangas Provincial Scholarship Program",
@@ -68,7 +68,7 @@
         "contact_number": "09192345678",
         "office_address": "Lipa City Hall, Batangas",
         "scholarship_provider_id": "PROV-00004",
-        "password": "2bfc6617f50586fea42f7e1ea224d05aa6dd46b75dce7d3e4da92e6b18f758e6",
+        "password": "ecd71870d1963316a97e3ac3408c9835ad8cf0f3c1bc703527c30265534f75ae",
         "status": "approved",
         "scholarships": {
             "SCH-00001": {
@@ -90,36 +90,6 @@
                 "grant_amount": 5000,
                 "slots": 200,
                 "deadline": "2026-12-12"
-            },
-            "SCH-00003": {
-                "scholarship_name": "",
-                "description": "",
-                "location": "",
-                "min_gwa": null,
-                "max_income": null,
-                "grant_amount": null,
-                "slots": null,
-                "deadline": ""
-            },
-            "SCH-00004": {
-                "scholarship_name": "",
-                "description": "",
-                "location": "",
-                "min_gwa": null,
-                "max_income": null,
-                "grant_amount": null,
-                "slots": null,
-                "deadline": ""
-            },
-            "SCH-00005": {
-                "scholarship_name": "",
-                "description": "",
-                "location": "",
-                "min_gwa": null,
-                "max_income": null,
-                "grant_amount": null,
-                "slots": null,
-                "deadline": ""
             }
         }
     }
