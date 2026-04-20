@@ -632,10 +632,10 @@ class CreateNewScholarship(tk.Frame):
             "scholarship_name": self.scholarship_name.get(),
             "description": self.short_description.get(),
             "location": self.location.get(),
-            "min_gwa": self.min_gwa.get(),
-            "max_income": self.max_income.get(),
-            "grant_amount": self.grant_amount.get(),
-            "slots": self.slots.get(),
+            "min_gwa": float(self.min_gwa.get()),
+            "max_income": float(self.max_income.get()),
+            "grant_amount": float(self.grant_amount.get()),
+            "slots": float(self.slots.get()),
             "deadline": self.deadline.get(),
         }
 

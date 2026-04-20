@@ -399,10 +399,10 @@ class RegisterNewProfile(tk.Frame):
 
         students_db[student_id] = {
             "name": self.full_name.get(),
-            "age": self.age.get(),
-            "gwa": self.gwa.get(),
+            "age": float(self.age.get()),
+            "gwa": float(self.gwa.get()),
             "ctc_of_grades": getattr(self, "grades_filepath", None),
-            "annual_family_income": self.annual_income.get(),
+            "annual_family_income": float(self.annual_income.get()),
             "proof_of_income": getattr(self, "income_filepath", None),
             "address": self.address.get(),
             "student_id": student_id,
